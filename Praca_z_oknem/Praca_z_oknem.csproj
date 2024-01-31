@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="ciezarowka.jpg" />
+    <None Remove="nakaz_jazdy.jpg" />
+    <None Remove="samochod.png" />
+    <None Remove="stop_zdjecie.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="ciezarowka.jpg" />
+    <Resource Include="nakaz_jazdy.jpg" />
+    <Resource Include="samochod.png" />
+    <Resource Include="stop_zdjecie.jpg" />
+  </ItemGroup>
+
+</Project>

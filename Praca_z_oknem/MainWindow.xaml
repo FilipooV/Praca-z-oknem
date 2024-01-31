@@ -1,0 +1,106 @@
+﻿<Window x:Class="Praca_z_oknem.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Praca_z_oknem"
+        mc:Ignorable="d"
+        Title="MainWindow" MinHeight="300" MinWidth="450" MaxHeight="600" MaxWidth="800" Height="450" Width="550" ResizeMode="NoResize">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        
+        <!--pierwsza strona-->
+
+        <StackPanel Grid.Row="0" Grid.Column="0">
+            <RadioButton x:Name="radio_lewa_1" Content="Czerwony" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+            <RadioButton x:Name="radio_lewa_2" Content="Żółty" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+            <RadioButton x:Name="radio_lewa_3" Content="Niebieski" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+            <RadioButton x:Name="radio_lewa_4" Content="Fioletowy" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+
+            <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="30">
+                <TextBlock.Style>
+                    <Style TargetType="TextBlock">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding IsChecked, ElementName=radio_lewa_1}" Value="True">
+                                <Setter Property="Text" Value="Czerwony"></Setter>
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding IsChecked, ElementName=radio_lewa_2}" Value="True">
+                                <Setter Property="Text" Value="Żółty"></Setter>
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding IsChecked, ElementName=radio_lewa_3}" Value="True">
+                                <Setter Property="Text" Value="Niebieski"></Setter>
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding IsChecked, ElementName=radio_lewa_4}" Value="True">
+                                <Setter Property="Text" Value="Fioletowy"></Setter>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBlock.Style>
+            </TextBlock>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="0">
+            <ToggleButton x:Name="przycisk_lewa_1" Content="Pokaż zdjęcie" Height="40" Margin="10,10,10,10"/>
+            <Image>
+                <Image.Style>
+                    <Style TargetType="Image">
+                        <Setter Property="Height" Value="120"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding IsChecked, ElementName=przycisk_lewa_1}" Value="True">
+                                <Setter Property="Source" Value="ciezarowka.jpg"/>
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding IsChecked, ElementName=przycisk_lewa_1}" Value="False">
+                                <Setter Property="Source" Value="samochod.png"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Image.Style>
+            </Image>
+        </StackPanel>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <!--druga strona-->
+        <StackPanel Grid.Column="1" Grid.Row="0">
+            <RadioButton x:Name="radio1" Content="B1" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked"/>
+            <RadioButton x:Name="radio2" Content="B" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Checked="radio2_Checked"/>
+            <RadioButton x:Name="radio3" Content="C" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Checked="radio3_Checked"/>
+            <RadioButton x:Name="radio4" Content="C+E" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Checked="radio4_Checked"/>
+            <TextBlock x:Name="textblock2" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Kategoria" VerticalAlignment="Top" FontSize="30"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.Column="1">
+            <ToggleButton x:Name="przycisk_off_on" Content="Przycisk" Height="40" Margin="10,10,10,10" Click="przycisk_off_on_Click"/>
+            <Image x:Name="zdjecie2" Height="120" />
+        </StackPanel>
+
+
+    </Grid>
+</Window>
